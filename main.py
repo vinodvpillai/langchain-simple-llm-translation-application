@@ -14,7 +14,7 @@ load_dotenv(dotenv_path)
 prompt = ChatPromptTemplate.from_messages([("system","Translate the following from English into {language}"),("user","{text}")])
 
 # LLM Model
-llm = ChatOpenAI(api_key=os.environ.get('OPENAI_API_KEY'), base_url=os.environ.get('OPENAI_API_HOST'), model=os.environ.get('OPENAI_MODEL'), temperature=0.5) # type: ignore
+llm = ChatOpenAI(api_key=os.environ.get('OPENAI_API_KEY'), model=os.environ.get('OPENAI_MODEL'), temperature=0.5) # type: ignore
 
 # Output Parser
 parser = StrOutputParser()
